@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet"> -->
+     
+    <style>
+        table{
+            border: 1px solid;
+            width: 50%;
+            height: 60dvh;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        td{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            padding: 10px;
+            font-size: 25px;
+        }
+        table tr td input{
+            font-family: sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <section class="splide" aria-labelledby="carousel-heading">
+        <h2 id="carousel-heading">Splide Basic HTML Example</h2>
+      
+        <div class="splide__track">
+              <ul class="splide__list">
+                  <li class="splide__slide">Slide 01</li>
+                  <li class="splide__slide">Slide 02</li>
+                  <li class="splide__slide">Slide 03</li>
+              </ul>
+        </div>
+    </section> -->
+    <table>
+        <tr>
+            <td colspan="7">
+                <input type="text" style="text-align: end; height: 100%; width: 100%;" id="displayScreen">
+            </td>
+        </tr>
+        <tr>
+            <td onclick="pick('PI', true)">Rad</td>
+            <td>9</td>
+            <td onclick="pick('factorial')">X!</td>
+            <td onclick="pick('(')">(</td>
+            <td onclick="pick(')')">)</td>
+            <td onclick="pick('%')">%</td>
+            <td onclick="clearscreen()">AC</td>
+        </tr>
+        <tr>
+            <td>Inv</td>
+            <td onclick="pick('sin', true)">sin</td>
+            <td>In</td>
+            <td onclick="pick(7)">7</td>
+            <td onclick="pick(8)">8</td>
+            <td onclick="pick(9)">9</td>
+            <td onclick="pick('/')">&divide;</td>
+        </tr>
+        <tr>
+            <td onclick="pick('PI', true)">&pi;</td>
+            <td onclick="pick('cos', true)">cos</td>
+            <td onclick="pick('log(', true)">log</td>
+            <td onclick="pick(4)">4</td>
+            <td onclick="pick(5)">5</td>
+            <td onclick="pick(4)">6</td>
+            <td onclick="pick('*')">x</td>
+        </tr>
+        <tr>
+            <td onclick="pick('E', true)">e</td>
+            <td onclick="pick('tan', true)">tan</td>
+            <td onclick="pick('sqrt', true)">&radic;x</td>
+            <td onclick="pick(1)">1</td>
+            <td onclick="pick(2)">2</td>
+            <td onclick="pick(3)">3</td>
+            <td onclick="pick('-')">-</td>
+        </tr>
+        <tr>
+            <td>Ans</td>
+            <td>EXP</td>
+            <td onclick="pick('pow', true)">X <sup>y</sup></td>
+            <td onclick="pick(0)">0</td>
+            <td onclick="pick('.')">.</td>
+            <td onclick="calculate()">=</td>
+            <td onclick="pick('+')">+</td>
+        </tr>
+    </table>
+
+    <script>
+        displayScreen.value = 0
+        function pick(val, ext = false){
+            if(ext){
+                val = "Math."+val
+            }
+            if(displayScreen.value == 0){
+                displayScreen.value = val
+            }else{
+                displayScreen.value += val
+            }
+        }
+        function calculate(){
+            let result = eval(displayScreen.value)
+            displayScreen.value = result
+        }
+        function clearscreen(){
+            displayScreen.value = 0
+        }
+
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+        new Splide( '.splide' ).mount();
+    </script> -->
+</body>
+
+</html>
